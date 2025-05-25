@@ -1,8 +1,15 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import fetchData from "../../utils/fetchData.js";
 import "./AvailableObjects.css";    
-
+import { AuthContext } from '../../context/AuthContext';
 const AvailableObjects = () => {
+
+/*     const { user } = useContext(AuthContext);
+
+    if (!user) {
+        return <p className="Feedback_message">Debes iniciar sesión para ver los objetos disponibles.</p>;
+    } */
+    
     const [availableObjects, setAvailableObjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
