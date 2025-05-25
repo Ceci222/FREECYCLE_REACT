@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Contact.css';
 
+
+const FORMSPREE = import.meta.env.VITE_FORMSPREE_URL;
 function Contact() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -10,7 +12,7 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://formspree.io/f/xdkgdjgg', {
+            const response = await fetch(FORMSPREE, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
