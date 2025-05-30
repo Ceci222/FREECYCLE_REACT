@@ -52,8 +52,8 @@ function Contact() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Correo"
                     required 
-                    oninvalid="this.setCustomValidity('Por favor, introduce un correo válido')"
-                    oninput="this.setCustomValidity('')"
+                    onInvalid={(e) => e.target.setCustomValidity('Por favor, introduce un correo válido')}
+                    onInput={(e) => e.target.setCustomValidity('')}
                 />
                 <textarea className='contact__textarea'
                     name="message"

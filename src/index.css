@@ -1,1 +1,25 @@
- import "react-multi-carousel/lib/styles.css";
+
+ body {
+    background-image: url('./assets/images/textura-de-carton.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+:root {
+  --color-primary: #4caf50;
+  --color-primary-hover: #45a049;
+  --color-text-main: #333;
+  --color-text-light: #ffffff;
+  --color-border: #ccc;
+   --footer-bg: #f9f9f9;
+
+  --color-link: #4caf50;
+  --color-link-hover: #45a049;
+
+  --color-error-text: #721c24;
+  --color-error-bg: #f8d7da;
+}
+
+
+

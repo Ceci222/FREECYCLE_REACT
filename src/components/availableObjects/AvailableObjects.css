@@ -1,73 +1,185 @@
-.available__objects__wrapper {
-  padding: 1rem;
-  max-width: 1200px;
+.available-objects-wrapper {
+  padding: 20px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.available__objects__wrapper h1 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+.available-objects-wrapper h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--color-text-main);
   text-align: center;
 }
 
-.loading,
-.error,
-.Feedback__message {
+.favorites-toggle-btn {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.favorites-toggle-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.available-objects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.object-card {
+  max-width: 500px;
+  height: 620px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  gap: 1em;
+
+  background-color: var(--color-text-light);
+  border: 2px solid var(--color-primary);
+  border-radius: 20px;
+
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.object-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.object-img {
+  width: 240px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.object-card h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.object-description {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+}
+
+.object-label {
+  font-weight: bold;
+  color: var(--color-text-main);
+}
+
+.pickup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  font-size: 0.85rem;
+  color: var(--color-border);
+  text-align: left;
+}
+
+.view-more-link {
+  margin-top: auto;
+  color: var(--color-link);
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.view-more-link:hover {
+  color: var(--color-link-hover);
+  text-decoration: none;
+}
+
+.favorite-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.2);
+}
+
+.favorite-button.favorited {
+  color: red;
+}
+
+.loading {
   text-align: center;
   font-size: 1.2rem;
-  margin-top: 2rem;
+  color: var(--color-text-main);
+  padding: 20px;
 }
 
-.available__objects__grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-}
-
-.object__card {
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.error {
   text-align: center;
-  height: auto;
-}
-
-.object__img {
-  width: 300px;    
-  height: 200px;   
-  object-fit: cover;  /* para recortar la imagen y llenar el espacio sin deformarla */
+  font-size: 1.2rem;
+  color: var(--color-error-text);
+  background-color: var(--color-error-bg);
+  padding: 15px;
   border-radius: 4px;
+  margin: 20px;
 }
 
-/* .object__img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-} */
-
-.object__description {
-  margin: 0.5rem 0;
+.objects-container {
+  text-align: center;
+  padding: 20px;
 }
 
-.object__label {
-  font-weight: bold;
-  color: #333;
+.objects-container h1 {
+  font-size: 2rem;
+  color: var(--color-text-main);
+  margin-bottom: 10px;
 }
 
-.pickup__info p {
-  margin: 0.3rem 0;
+.objects-container p {
+  font-size: 1.2rem;
+  color: var(--color-text-main);
 }
 
- @media (min-width: 768px) {
-  .available__objects__grid {
-    grid-template-columns: repeat(2, 1fr);
+.Feedback_message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-error-text);
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .object-card {
+    max-width: 90%;
+    height: auto;
   }
-}
 
-@media (min-width: 1024px) {
-  .available__objects__grid {
-    grid-template-columns: repeat(3, 1fr);
+  .object-img {
+    width: 180px;
+    height: 220px;
+  }
+
+  .favorites-toggle-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
   }
 }

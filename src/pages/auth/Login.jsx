@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-/* import { Link } from 'react-router-dom';*/
+import { useState, useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './Auth.css';
 import loginImage from '../../assets/images/Login.svg'; 
 import { AuthContext } from '../../context/AuthContext.jsx';
@@ -8,22 +8,33 @@ function Login() {
     const [userData, setUserData] = useState({ user_email: '', user_pwd: '' });
     const { onLogin } = useContext(AuthContext);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
-        setUserData({ ...userData, [e.target.name]: e.target.value });
+        try {
+            setUserData({ ...userData, [e.target.name]: e.target.value });
+        } catch (error) {
+            setError(error.message);
+        }
+        
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const result = await onLogin(userData.user_email, userData.user_pwd);
-        setError(result.error || null);
-        if (result.token) alert('Inicio de sesión exitoso');
+        try {
+            e.preventDefault();
+            const result = await onLogin(userData.user_email, userData.user_pwd);
+            setError(result.error || null);
+            /* if (result.token) alert('Inicio de sesión exitoso'); */
+            navigate('/')
+        } catch (error) {
+            setError(error.message);
+        }
     };
 
     return (
         <div className='auth__container'>
             <section className='auth__image'>
-                <img src={loginImage} alt="img" />
+                <img src='src/assets/images/Login.svg' alt="" />
             </section>
 
             <section className="auth__wrapper">
@@ -54,8 +65,8 @@ function Login() {
                     {error && <p className="error">{error}</p>}
                     <section className="auth__redirect">
                         <p className='auth__redirect__text'>¿No tienes una cuenta? </p>
-    {/*                     <Link to="/registro">Regístrate</Link>
-    */}                </section>
+                       <Link className='auth__redirect__link' to="/register">Regístrate</Link>
+                    </section>
                 </form>
 
             </section>

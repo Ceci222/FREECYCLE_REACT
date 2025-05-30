@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./DonatedObjects.css";
 
+
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -12,7 +13,7 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3.5,
+    items: 4.5,
     partialVisibilityGutter: 40,
   },
   tablet: {
@@ -55,7 +56,7 @@ const DonatedObjects = () => {
   if (error) return <div>{error}</div>;
   if (objects.length === 0) {
     return (
-      <div className="objects-container">
+      <div className="objects__container">
         <h1>Objetos Donados</h1>
         <p>No hay objetos donados disponibles.</p>
       </div>

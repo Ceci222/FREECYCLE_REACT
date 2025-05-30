@@ -1,20 +1,10 @@
-import Login from './pages/auth/Login.jsx';
-import Register from './pages/auth/Register.jsx';
-import Contact from './pages/contact/Contact.jsx';
-import DonatedObjects from './components/donatedObjects/DonatedObjects.jsx';
-import AvailableObjects from './components/availableObjects/AvailableObjects.jsx';
-
+import { RouterProvider } from 'react-router-dom';
+import router from './router/router.jsx';
+import "react-multi-carousel/lib/styles.css";
+import './index.css'; 
 
 function App() {
-  return (
-    <>
-      {/* <Register/>    
-      <Login/>  */}
-      {/* <Contact/> */}
-      {/* <DonatedObjects/> */}
-      <AvailableObjects/>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

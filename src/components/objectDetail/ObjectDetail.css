@@ -1,0 +1,99 @@
+.object-detail {
+  padding: 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+.object-detail h2 {
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+.object__img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  align-self: center;
+}
+
+.object-detail p {
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.object-detail button {
+  padding: 0.8rem 1.6rem;
+  font-weight: bold;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  transition: background 0.3s ease;
+  align-self: center;
+}
+
+.object-detail button:hover {
+  background-color: var(--color-primary-hover);
+  opacity: 0.95;
+}
+
+.button {
+  background-color: transparent;
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.object-detail a {
+  color: var(--color-link);
+  text-decoration: underline;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.object-detail a:hover {
+  color: var(--color-link-hover);
+  text-decoration: none;
+}
+
+.error-message {
+  text-align: center;
+  color: var(--color-error-text);
+  background-color: var(--color-error-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+span {
+  font-weight: bold;
+}
+
+@media (max-width: 760px) {
+  .object__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .object-detail {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .object-detail h2 {
+    font-size: 1.5rem;
+  }
+}

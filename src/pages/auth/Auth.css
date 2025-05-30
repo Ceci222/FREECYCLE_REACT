@@ -8,7 +8,6 @@ body {
   font-family: 'Fredoka One', sans-serif;
 }
 
-
 .auth__container {
   display: flex;
   flex-direction: column;
@@ -19,7 +18,7 @@ body {
 .auth__image {
   width: 100%;
   padding: 1rem 0;
-  background-color: green; 
+  background-color: var(--color-primary); /* reemplazado */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,10 +67,21 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.auth__redirect__text{
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
+.auth__redirect__text {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.auth__redirect a {
+  text-decoration: none;
+  color: var(--color-primary); /* reemplazado */
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
 /* Botón */
@@ -80,8 +90,8 @@ body {
   padding: 0.75rem;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--light-gray, #fff);
-  background-color: green;
+  color: var(--color-text-light); /* reemplazado */
+  background-color: var(--color-primary); /* reemplazado */
   border: none;
   border-radius: 1rem;
   cursor: pointer;
@@ -90,7 +100,7 @@ body {
 }
 
 .auth__button:hover {
-  background-color: orangered;
+  background-color: var(--color-primary-hover); /* reemplazado */
 }
 
 .error {
