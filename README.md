@@ -102,17 +102,6 @@ El proyecto está en desarrollo. Algunas funcionalidades pueden estar incompleta
 - Que el donante pueda eliminar los objetos que ha donado.
 - Establecer comunicación entre el donante y el beneficiario para que puedan concretar la entrega y compartir datos.
 
-## Contribuir
-
-¡Las contribuciones son bienvenidas! Para contribuir:
-
-1. Haz un fork del repositorio.
-2. Crea una rama para tu cambio: `git checkout -b feature/nueva-funcionalidad`.
-3. Realiza tus cambios y haz commit: `git commit -m "Añade nueva funcionalidad"`.
-4. Envía un pull request con una descripción clara de los cambios.
-
-Por favor, crea un **issue** antes de trabajar en cambios importantes para coordinar con el equipo.
-
 ## Contacto
 
 Para preguntas, sugerencias o problemas, contacta a través de:
